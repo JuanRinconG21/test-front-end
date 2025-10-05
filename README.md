@@ -227,12 +227,3 @@ export interface ProductsResponse {
 ## 👨‍💻 **Autor**
 
 **Juan Jose Rincón Gomez**
-
-- **GitHub**: [@JuanRinconG21](https://github.com/JuanRinconG21)
-- **Proyecto**: Prueba Frontend - Skandia
-
-<div align="center">
-
-**Desarrollado por Juan Jose Rincón Gomez**
-
-</div>
