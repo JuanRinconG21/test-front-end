@@ -1,0 +1,201 @@
+/* ======================================
+   GOAL CARD (TARJETA DE OBJETIVO)
+   ====================================== */
+.goal-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-xs);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  z-index: 100;
+  transform: translateY(-40px); /* Se superpone al hero banner */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+/* Encabezado de la tarjeta */
+.goal-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.goal-card__title {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+  color: var(--color-charcoal);
+}
+
+.goal-card__category {
+  font-size: 1rem;
+  color: var(--color-dark-gray);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+.goal-card__link {
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.125rem;
+  text-decoration: underline;
+}
+
+.goal-card__link:hover {
+  opacity: 0.8;
+}
+
+/* Cuerpo de la tarjeta - Grid de detalles */
+.goal-card__body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.goal-card__detail {
+  padding: var(--spacing-md);
+}
+
+.goal-card__label {
+  font-size: 1.12rem;
+  color: var(--color-dark-gray);
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.goal-card__icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Valores con diferentes colores de fondo */
+.goal-card__value {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.125rem;
+  color: var(--color-charcoal);
+}
+
+/* Valor de fecha */
+.goal-card__value--date {
+  background-color: var(--color-light-blue);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+/* Valor de monto objetivo */
+.goal-card__value--amount {
+  background-color: var(--color-yellow);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+/* Valor de monto actual */
+.goal-card__value--current {
+  background-color: var(--color-mint);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Pie de la tarjeta - CTA */
+.goal-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.goal-card__cta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.goal-card__check-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.goal-card__cta-link {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  text-decoration: underline;
+}
+
+.goal-card__illustration {
+  flex-shrink: 0;
+}
+
+.goal-card__mountain {
+  width: 200px;
+  height: auto;
+}
+
+/* ======================================
+   RESPONSIVE - TABLET
+   ====================================== */
+@media (min-width: 896px) {
+  .goal-card {
+    padding: var(--spacing-md) var(--spacing-sm);
+    transform: translateY(-40px);
+  }
+}
+
+/* ======================================
+   RESPONSIVE - DESKTOP
+   ====================================== */
+@media (min-width: 1024px) {
+  .goal-card {
+    transform: translateY(-40px);
+  }
+
+  .goal-card__body {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ======================================
+   RESPONSIVE - MOBILE
+   ====================================== */
+@media (max-width: 856px) {
+  .goal-card {
+    transform: translateY(-40px);
+    padding: var(--spacing-md);
+  }
+
+  .goal-card__header {
+    flex-direction: column;
+  }
+
+  .goal-card__body {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-card__footer {
+    flex-direction: column;
+  }
+}

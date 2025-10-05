@@ -1,0 +1,47 @@
+<header class="header">
+  <nav class="header-nav">
+    <!-- Menu Button -->
+    <button class="header-nav__menu-btn" (click)="toggleMenu()" aria-label="Toggle menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M4 6l16 0" />
+        <path d="M4 12l16 0" />
+        <path d="M4 18l16 0" />
+      </svg>
+    </button>
+
+    <!--  Logo and Title -->
+    <div class="header-nav__brand">
+      <img src="assets/nav/Logo.svg" alt="Logo Skandia" class="header-nav__logo" />
+      <span class="header-nav__divider">|</span>
+      <span class="header-nav__title">Plan Financiero Digital - FPX</span>
+    </div>
+
+    <!-- Actions -->
+    <div class="header-nav__actions">
+      <div class="header-nav__action">
+        <img src="assets/nav/Happy.svg" alt="Feliz" class="header-nav__icon" />
+        <span class="header-nav__text">Tu Financial Planner</span>
+      </div>
+      <div class="header-nav__action">
+        <img src="assets/nav/Hand.svg" alt="Mano" class="header-nav__icon" />
+        <span class="header-nav__text">Aportes</span>
+      </div>
+      <div class="header-nav__action">
+        <img src="assets/nav/Faq.svg" alt="Preguntas Frecuentes" class="header-nav__icon" />
+        <span class="header-nav__text">Preguntas<br />Frecuentes</span>
+      </div>
+    </div>
+  </nav>
+</header>

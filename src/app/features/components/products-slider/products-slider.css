@@ -1,0 +1,571 @@
+/* ======================================
+   SECCIÓN DE PRODUCTOS
+   ====================================== */
+.products-section {
+  margin-bottom: var(--spacing-xxl);
+}
+
+/* Encabezado de la sección */
+.products-section__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: 0 var(--spacing-md);
+}
+
+.products-section__title {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.75rem;
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+}
+
+.products-section__highlight {
+  color: var(--color-orange);
+}
+
+.products-section__description {
+  font-size: 1.1rem;
+  color: var(--color-dark-gray);
+  line-height: 1.6;
+}
+
+.products-section__help {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-dark-gray);
+  font-weight: var(--font-weight-semibold);
+}
+
+.products-section__help-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.products-section__footer {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+/* ======================================
+   SLIDER (CARRUSEL)
+   ====================================== */
+
+/* Contenedor del slider */
+.slider {
+  width: 100%;
+  position: relative;
+  margin: var(--spacing-lg) 0;
+  padding: 0 var(--spacing-xxl); /* Espacio para los botones de navegación */
+}
+
+.slider__container {
+  overflow: hidden; /* Oculta las tarjetas que no se ven */
+  width: 100%;
+  position: relative;
+}
+
+.slider__wrapper {
+  display: flex;
+  gap: var(--spacing-lg);
+  transition: transform 0.5s ease;
+}
+
+/* Botones de navegación del slider */
+.slider__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  color: var(--color-charcoal);
+  flex-shrink: 0;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.slider__btn--prev {
+  left: 0;
+  margin-left: 4px;
+}
+
+.slider__btn--next {
+  right: 0;
+  margin-right: 4px;
+}
+
+.slider__btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.slider__btn:disabled:hover {
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
+  transform: translateY(-50%);
+}
+
+/* ======================================
+   PRODUCT CARD (TARJETAS DEL SLIDER)
+   ====================================== */
+.product-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-bottom: 4px solid transparent;
+  min-height: 350px;
+  box-shadow: 0px 0px 6px var(--color-shadow);
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.product-card:hover {
+  box-shadow: 0px 0px 6px var(--color-primary);
+}
+
+/* Colores de borde inferior según posición */
+.product-card:nth-child(1) {
+  border-bottom-color: var(--color-lime);
+}
+
+.product-card:nth-child(2) {
+  border-bottom-color: var(--color-light-blue);
+}
+
+.product-card:nth-child(3) {
+  border-bottom-color: var(--color-teal);
+}
+
+.product-card:nth-child(4) {
+  border-bottom-color: var(--color-lime);
+}
+
+.product-card:nth-child(5) {
+  border-bottom-color: var(--color-orange);
+}
+/* Tarjeta especial de productos recomendados */
+.product-card--recommended {
+  border-bottom-color: var(--color-orange);
+  background: url('/assets/main/ProductsRecomen.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Encabezado de la tarjeta */
+.product-card__header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-md);
+  min-height: 30px;
+}
+
+.product-card__header--special {
+  justify-content: center;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  margin: calc(-1 * var(--spacing-lg)) calc(-1 * var(--spacing-lg)) var(--spacing-lg);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* Checkbox personalizado */
+.product-card__checkbox {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  border: 2px solid var(--color-primary);
+  border-radius: 4px;
+  appearance: none; /* Elimina el estilo por defecto del navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--color-white);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+/* Estado checked - solo fondo verde, sin chulo */
+.product-card__checkbox:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0px 0px 6px var(--color-primary);
+}
+
+.product-card__badge {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Cuerpo de la tarjeta */
+.product-card__body {
+  flex: 1;
+}
+
+.product-card__body--center {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.product-card__title {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-sm);
+}
+
+.product-card__title--large {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.product-card__number {
+  font-size: 1.4rem;
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.product-card__label {
+  font-size: 1.125rem;
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-primary);
+}
+
+.product-card__amount {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+/* Pie de la tarjeta */
+.product-card__footer {
+  background-color: var(--color-very-light-gray);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.product-card__emoji {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.product-card__message {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-dark-gray);
+  text-align: center;
+  font-family: var(--font-secondary);
+}
+
+.product-card__highlight {
+  color: var(--color-orange);
+  font-weight: var(--font-weight-bold);
+}
+
+.product-card__medal {
+  width: 80px;
+  height: 80px;
+}
+
+/* Botón CTA de la tarjeta recomendada */
+.product-card__cta-btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: 200px;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: -20px;
+}
+
+.btn-primary {
+  background-color: var(--color-light-gray);
+  color: var(--color-dark-gray);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: 200px;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 1rem;
+}
+
+/* ======================================
+   RESPONSIVE - TABLET
+   ====================================== */
+@media (min-width: 896px) {
+  .products-section__title {
+    font-size: 2rem;
+  }
+
+  .slider {
+    padding: 0 var(--spacing-xl);
+  }
+
+  .product-card {
+    width: calc(50% - var(--spacing-md));
+    min-width: calc(50% - var(--spacing-md));
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  .slider__wrapper {
+    gap: var(--spacing-md);
+  }
+
+  .recommended-products__container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .recommended-products__title {
+    font-size: 1.875rem;
+    text-align: center;
+  }
+
+  .recommend-card {
+    max-width: 600px;
+  }
+
+  .recommend-card__header {
+    height: 300px;
+  }
+
+  /* Flecha abajo a la derecha en tablet */
+  .recommend-card__next {
+    display: flex;
+    position: absolute;
+    right: var(--spacing-lg);
+    bottom: var(--spacing-lg);
+    top: auto;
+    transform: none;
+  }
+
+  .recommend-card__next:hover {
+    transform: scale(1.15);
+  }
+}
+
+/* ======================================
+   RESPONSIVE - DESKTOP
+   ====================================== */
+@media (min-width: 1024px) {
+  .products-section__title {
+    font-size: 2.25rem;
+  }
+
+  .slider {
+    padding: 0 var(--spacing-xxl);
+  }
+
+  .product-card {
+    width: calc(33.333% - var(--spacing-lg));
+    min-width: calc(33.333% - var(--spacing-lg));
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  .slider__wrapper {
+    gap: var(--spacing-lg);
+  }
+
+  .recommended-products__container {
+    grid-template-columns: 1fr 1fr; /* Dos columnas: texto izquierda, card derecha */
+    gap: var(--spacing-xxl);
+    align-items: center;
+  }
+
+  .recommended-products__left {
+    padding-right: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+    height: 100%;
+  }
+
+  .recommended-products__title {
+    font-size: 2.25rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .recommended-products__right {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .recommend-card {
+    max-width: 550px;
+  }
+
+  .recommend-card__header {
+    height: 320px;
+  }
+
+  /* Mostrar flecha en desktop */
+  .recommend-card__next {
+    display: flex; /* Visible en desktop */
+    right: calc(100% + var(--spacing-lg)); /* Separación de la card */
+  }
+}
+
+/* ======================================
+   RESPONSIVE - MOBILE
+   ====================================== */
+@media (max-width: 856px) {
+  .products-section__title {
+    font-size: 1.5rem;
+  }
+
+  .slider {
+    padding: 0 var(--spacing-md); /* Menos padding en móvil */
+  }
+
+  .product-card {
+    width: 100%; /* 1 tarjeta a la vez en móvil */
+    min-width: 100%;
+    padding: var(--spacing-md);
+    min-height: 400px;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+
+  .product-card__title {
+    font-size: 1.25rem;
+  }
+
+  .product-card__amount {
+    font-size: 1.5rem;
+  }
+
+  .slider__btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .slider__btn--prev {
+    left: var(--spacing-xs);
+    margin-left: 0;
+  }
+
+  .slider__btn--next {
+    right: var(--spacing-xs);
+    margin-right: 0;
+  }
+  .recommended-products {
+    margin: var(--spacing-lg) var(--spacing-sm);
+    border-radius: var(--radius-lg);
+  }
+
+  .recommended-products__container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .recommended-products__left {
+    padding: 0;
+    height: 100%;
+  }
+
+  .recommended-products__badge {
+    font-size: 0.75rem;
+    padding: 6px var(--spacing-sm);
+  }
+
+  .recommended-products__badge-icon {
+    width: 50px;
+    height: auto;
+  }
+
+  .recommended-products__title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .recommended-products__image {
+    min-height: 220px;
+  }
+
+  .recommended-products__right {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .recommend-card {
+    max-width: 100%;
+  }
+
+  .recommend-card__header {
+    height: 220px;
+  }
+
+  .recommend-card__body {
+    padding: var(--spacing-md);
+  }
+
+  .recommend-card__footer {
+    padding: 0 var(--spacing-md) var(--spacing-lg);
+  }
+
+  .recommend-card__favorite {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Flecha abajo a la derecha en móvil */
+  .recommend-card__next {
+    display: flex;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    right: var(--spacing-md);
+    bottom: var(--spacing-md);
+    top: auto;
+    transform: none;
+  }
+
+  .recommend-card__next:hover {
+    transform: scale(1.1);
+  }
+}

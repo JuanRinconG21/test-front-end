@@ -1,0 +1,104 @@
+<!-- Products Header -->
+<header class="products-section__header">
+  <h1 class="products-section__title">
+    ¡Vamos por esos
+    <span class="products-section__highlight">$ 6.000.000</span> para
+    <span class="products-section__highlight">Conocer mi sobrino</span>!
+  </h1>
+  <p class="products-section__description">
+    ¡A través de tus productos y nuestros rendimientos podremos lograrlo!
+    <br />
+    <span class="products-section__help">
+      Asocia tus productos o adquiere uno nuevo.
+      <img src="assets/main/QuestionGreen.svg" alt="Ayuda" class="products-section__help-icon" />
+    </span>
+  </p>
+</header>
+
+<!-- PRODUCTS SLIDER -->
+<section class="slider-section">
+  <div class="slider" #productsSlider>
+    <!-- Previous Button -->
+    <button class="slider__btn slider__btn--prev" (click)="prev()" [disabled]="currentIndex === 0">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M15 6l-6 6l6 6" />
+      </svg>
+    </button>
+
+    <!-- Slider Container -->
+    <div class="slider__container">
+      <div
+        class="slider__wrapper"
+        #sliderWrapper
+        [style.transform]="'translateX(' + translateX + 'px)'"
+      >
+        <!-- Product Cards from API -->
+        @for (product of products; track product.numberProduct) {
+        <div class="product-card">
+          <header class="product-card__header">
+            <input
+              type="checkbox"
+              class="product-card__checkbox"
+              (change)="onCheckboxChange(product, $event)"
+            />
+          </header>
+          <section class="product-card__body">
+            <h4 class="product-card__title">{{ product.nameProduct }}</h4>
+            <p class="product-card__number">#{{ product.numberProduct }}</p>
+            <p class="product-card__label">Ya cuentas con:</p>
+            <p class="product-card__amount">$ {{ formatBalance(product.balanceProduct) }}</p>
+          </section>
+          <footer class="product-card__footer">
+            <img src="assets/main/Happy.svg" alt="Feliz" class="product-card__emoji" />
+            <p class="product-card__message">
+              {{ product.detaildProduct }}
+            </p>
+          </footer>
+        </div>
+        }
+
+        <!-- RECOMMENDED CARD -->
+        <div class="product-card product-card--recommended" (click)="onExploreClick()">
+          <section class="product-card__body product-card__body--center">
+            <button class="product-card__cta-btn">EXPLORA AHORA</button>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Button -->
+    <button class="slider__btn slider__btn--next" (click)="next()" [disabled]="isLastSlide()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M9 6l6 6l-6 6" />
+      </svg>
+    </button>
+  </div>
+</section>
+
+<!-- Associate Button -->
+<footer class="products-section__footer">
+  <button class="btn-primary" [disabled]="selectedProducts.length === 0">ASOCIAR A OBJETIVO</button>
+</footer>
+<app-recommended-products [isVisible]="showRecommendedSection"></app-recommended-products>

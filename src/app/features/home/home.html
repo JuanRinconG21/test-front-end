@@ -1,0 +1,16 @@
+<!-- src/app/features/home/home.html -->
+
+<app-header (menuToggle)="onMenuToggle()"></app-header>
+<app-sidebar
+  [isExpanded]="sidebarExpanded()"
+  (itemClicked)="onSidebarItemClick()"
+  (sidebarClicked)="onSidebarClick()"
+></app-sidebar>
+
+<main class="main-content">
+  <app-hero-banner></app-hero-banner>
+  <app-goal-card></app-goal-card>
+  <app-products-slider></app-products-slider>
+</main>
+
+<app-footer></app-footer>

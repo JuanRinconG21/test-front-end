@@ -1,0 +1,124 @@
+/* ======================================
+   HERO BANNER (BANNER PRINCIPAL)
+   ====================================== */
+.hero-banner {
+  background: url('/assets/main/StarsBackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  color: var(--color-white);
+  margin-bottom: calc(var(--spacing-xl) * -2); 
+  position: relative;
+  overflow: hidden;
+  height: 52vh;
+  z-index: 1; 
+}
+
+/* Encabezado del banner (breadcrumb) */
+.hero-banner__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-banner__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-banner__breadcrumb {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Cuerpo del banner */
+.hero-banner__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 40px); /* Centra el contenido verticalmente */
+}
+
+.hero-banner__title {
+  text-align: center;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.3;
+  color: var(--color-white);
+}
+
+.hero-banner__subtitle {
+  font-size: 1.5rem;
+  opacity: 0.95;
+  color: var(--color-white);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+/* ======================================
+   RESPONSIVE - TABLET
+   ====================================== */
+@media (min-width: 896px) {
+  .hero-banner {
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    height: 55vh;
+  }
+
+  .hero-banner__title {
+    font-size: 2.25rem;
+  }
+
+  .hero-banner__subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* ======================================
+   RESPONSIVE - DESKTOP
+   ====================================== */
+@media (min-width: 1024px) {
+  .hero-banner {
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    height: 60vh;
+  }
+
+  .hero-banner__title {
+    font-size: 2.5rem;
+  }
+
+  .hero-banner__subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* ======================================
+   RESPONSIVE - MOBILE
+   ====================================== */
+@media (max-width: 856px) {
+  .hero-banner {
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-bottom: calc(var(--spacing-lg) * -1);
+    height: 45vh;
+  }
+
+  .hero-banner__title {
+    font-size: 1.5rem;
+  }
+
+  .hero-banner__subtitle {
+    font-size: 1rem;
+  }
+}

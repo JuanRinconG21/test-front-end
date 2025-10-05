@@ -1,0 +1,102 @@
+/* src/app/shared/components/sidebar/sidebar.css */
+
+/* ======================================
+   SIDEBAR (MENÚ LATERAL)
+   ====================================== */
+
+/* Contenedor del sidebar */
+.sidebar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width-collapsed);
+  background-color: var(--color-light-gray);
+  transition: width var(--transition-normal);
+  overflow: hidden;
+  z-index: 999;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Sidebar expandido */
+.sidebar.sidebar--expanded {
+  width: var(--sidebar-width-expanded);
+  overflow: auto;
+}
+
+/* Lista de items */
+.sidebar__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Items del menú */
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+/* Item activo */
+.sidebar__item--active {
+  background-color: var(--color-primary);
+}
+
+.sidebar__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.sidebar__text {
+  font-size: 0.875rem;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  color: var(--color-dark-gray);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Mostrar texto cuando sidebar está expandido */
+.sidebar--expanded .sidebar__text {
+  opacity: 1;
+}
+
+/* Items solo visibles en móvil */
+.sidebar__item--mobile {
+  display: none;
+}
+
+/* ======================================
+   RESPONSIVE - TABLET
+   ====================================== */
+@media (min-width: 896px) {
+  .sidebar__item--mobile {
+    display: none;
+  }
+}
+
+/* ======================================
+   RESPONSIVE - MOBILE
+   ====================================== */
+@media (max-width: 856px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: var(--sidebar-width-expanded);
+    overflow: auto;
+  }
+
+  .sidebar--expanded {
+    transform: translateX(0);
+    overflow: auto;
+  }
+
+  .sidebar__item--mobile {
+    display: flex;
+  }
+}

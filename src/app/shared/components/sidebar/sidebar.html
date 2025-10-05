@@ -1,0 +1,72 @@
+<!-- src/app/shared/components/sidebar/sidebar.html -->
+
+<aside
+  class="sidebar"
+  [class.sidebar--expanded]="isExpanded()"
+  id="sidebar"
+  (click)="onSidebarClick($event)"
+>
+  <ul class="sidebar__list">
+    <!-- Menu Item: Inicio -->
+    <li
+      class="sidebar__item sidebar__item--active"
+      (click)="onItemClick(); $event.stopPropagation()"
+    >
+      <img src="assets/aside/Home.svg" alt="Inicio" class="sidebar__icon" />
+      <span class="sidebar__text">Inicio</span>
+    </li>
+
+    <!-- Menu Item: Contratos -->
+    <li class="sidebar__item" (click)="onItemClick(); $event.stopPropagation()">
+      <img src="assets/aside/Paper.svg" alt="Contratos" class="sidebar__icon" />
+      <span class="sidebar__text">Contratos</span>
+    </li>
+
+    <!-- Menu Item: Acciones -->
+    <li class="sidebar__item" (click)="onItemClick(); $event.stopPropagation()">
+      <img src="assets/aside/Tool.svg" alt="Acciones" class="sidebar__icon" />
+      <span class="sidebar__text">Acciones</span>
+    </li>
+
+    <!-- Menu Item: Objetivos -->
+    <li class="sidebar__item" (click)="onItemClick(); $event.stopPropagation()">
+      <img src="assets/aside/Star.svg" alt="Objetivos" class="sidebar__icon" />
+      <span class="sidebar__text">Objetivos</span>
+    </li>
+
+    <!-- Menu Item: Herramientas -->
+    <li class="sidebar__item" (click)="onItemClick(); $event.stopPropagation()">
+      <img src="assets/aside/Money.svg" alt="Herramientas" class="sidebar__icon" />
+      <span class="sidebar__text">Herramientas</span>
+    </li>
+
+    <!-- Menu Item: Servicio al cliente -->
+    <li class="sidebar__item" (click)="onItemClick(); $event.stopPropagation()">
+      <img src="assets/aside/Talk.svg" alt="Servicio al cliente" class="sidebar__icon" />
+      <span class="sidebar__text">Servicio al cliente</span>
+    </li>
+
+    <!-- Mobile Only Menu Items -->
+    <li
+      class="sidebar__item sidebar__item--mobile"
+      (click)="onItemClick(); $event.stopPropagation()"
+    >
+      <img src="assets/nav/Happy.svg" alt="Tu Financial Planner" class="sidebar__icon" />
+      <span class="sidebar__text">Tu Financial Planner</span>
+    </li>
+    <li
+      class="sidebar__item sidebar__item--mobile"
+      (click)="onItemClick(); $event.stopPropagation()"
+    >
+      <img src="assets/nav/Hand.svg" alt="Aportes" class="sidebar__icon" />
+      <span class="sidebar__text">Aportes</span>
+    </li>
+    <li
+      class="sidebar__item sidebar__item--mobile"
+      (click)="onItemClick(); $event.stopPropagation()"
+    >
+      <img src="assets/nav/Faq.svg" alt="Preguntas Frecuentes" class="sidebar__icon" />
+      <span class="sidebar__text">Preguntas Frecuentes</span>
+    </li>
+  </ul>
+</aside>

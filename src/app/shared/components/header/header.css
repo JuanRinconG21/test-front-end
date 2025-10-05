@@ -1,0 +1,131 @@
+/* src/app/shared/components/header/header.css */
+
+/* Contenedor del header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+}
+
+/* Barra de navegación */
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  height: 70px;
+  gap: 4rem;
+}
+
+/* Botón del menú (móvil) */
+.header-nav__menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #00c83c;
+  margin-left: -10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Sección de marca/logo */
+.header-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.header-nav__logo {
+  width: 100px;
+}
+
+.header-nav__divider {
+  color: #3f3f3f;
+  font-size: 1.5rem;
+}
+
+.header-nav__title {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #3f3f3f;
+}
+
+/* Acciones rápidas (solo escritorio) */
+.header-nav__actions {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-nav__action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.header-nav__action:hover {
+  opacity: 0.8;
+}
+
+.header-nav__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.header-nav__text {
+  font-size: 0.75rem;
+  color: #00c83c;
+  line-height: 1.2;
+  text-decoration: underline;
+  font-family: 'Verdana', sans-serif;
+  font-weight: 700;
+}
+
+/* ======================================
+   RESPONSIVE - TABLET
+   ====================================== */
+@media (min-width: 896px) {
+  .header-nav {
+    padding: 1rem 1rem;
+  }
+
+  .header-nav__text {
+    font-size: 0.6rem;
+  }
+}
+
+/* ======================================
+   RESPONSIVE - DESKTOP
+   ====================================== */
+@media (min-width: 1024px) {
+  .header-nav__actions {
+    display: flex;
+  }
+
+  .header-nav__text {
+    font-size: 0.75rem;
+  }
+}
+
+/* ======================================
+   RESPONSIVE - MOBILE
+   ====================================== */
+@media (max-width: 856px) {
+  .header-nav__title {
+    font-size: 0.8rem;
+  }
+}

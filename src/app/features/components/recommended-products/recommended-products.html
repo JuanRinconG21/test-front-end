@@ -1,0 +1,122 @@
+<section
+  class="recommended-products"
+  id="recommendedProducts"
+  [class.recommended-products--visible]="isVisible()"
+>
+  <div class="recommended-products__container">
+    <!-- Badge -->
+    <div class="recommended-products__left">
+      <header class="recommended-products__badge">
+        <img src="assets/main/Medal.svg" alt="Medalla" class="recommended-products__badge-icon" />
+        <p class="recommended-products__badge-text">Productos recomendados</p>
+      </header>
+
+      <div class="recommended-products__content">
+        <h2 class="recommended-products__title">
+          ¡Te recomendamos estos productos para
+          <span class="recommended-products__highlight">Conocer sobrino</span>!
+        </h2>
+      </div>
+    </div>
+
+    <!-- Recommendation Card -->
+    <div class="recommended-products__right">
+      <article class="recommend-card">
+        <!-- Card Header Recommendation -->
+        <header class="recommend-card__header">
+          <div class="recommend-card__image">
+            <img src="assets/main/Dog.png" alt="Perro" />
+          </div>
+          <button
+            class="recommend-card__favorite"
+            aria-label="Agregar a favoritos"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              [attr.fill]="isFavorite ? 'currentColor' : 'none'"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+              />
+            </svg>
+          </button>
+          <span class="recommend-card__category">Ahorro e inversión</span>
+        </header>
+
+        <!-- Card Body Recommendation -->
+        <section class="recommend-card__body">
+          <h3 class="recommend-card__title">
+            ¡Fondo de inversión Colectiva,
+            <span class="recommend-card__highlight"
+              >la acción para potenciar tu capital y hacer real tu objetivo!</span
+            >
+          </h3>
+          <a href="#" class="recommend-card__link">Conoce más</a>
+        </section>
+
+        <!-- Card Footer Recommendation -->
+        <footer class="recommend-card__footer">
+          <div class="recommend-card__feature">
+            <img src="assets/main/World.svg" alt="Mundo" class="recommend-card__icon" />
+            <p class="recommend-card__text">
+              Rentabilidades mínimas del
+              <strong>3% anuales </strong>
+            </p>
+          </div>
+          <div class="recommend-card__feature">
+            <img src="assets/main/Person.svg" alt="Persona" class="recommend-card__icon" />
+            <p class="recommend-card__text">
+              <strong>4.000 clientes</strong>
+              confían en este producto
+            </p>
+          </div>
+        </footer>
+
+        <!-- Next Arrow -->
+        <button class="recommend-card__next" (click)="nextRecommendation()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 6l6 6l-6 6" />
+          </svg>
+        </button>
+      </article>
+
+      <!-- Dots -->
+      <div class="recommend-card__dots">
+        <span
+          class="recommend-card__dot"
+          [class.recommend-card__dot--active]="currentDot === 0"
+          (click)="goToDot(0)"
+        ></span>
+        <span
+          class="recommend-card__dot"
+          [class.recommend-card__dot--active]="currentDot === 1"
+          (click)="goToDot(1)"
+        ></span>
+        <span
+          class="recommend-card__dot"
+          [class.recommend-card__dot--active]="currentDot === 2"
+          (click)="goToDot(2)"
+        ></span>
+      </div>
+    </div>
+  </div>
+</section>

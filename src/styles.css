@@ -1,1 +1,141 @@
 /* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+
+/* ======================================
+   VARIABLES CSS
+   ====================================== */
+:root {
+  /* ========================================
+     PALETA DE COLORES
+     ======================================== */
+  --color-white: #ffffff;
+  --color-shadow: #00000029;
+  --color-primary: #00c83c;
+  --color-dark-gray: #3f3f3f;
+  --color-yellow: #fecd72;
+  --color-light-blue: #a5d7e1;
+  --color-mint: #95dbb7;
+  --color-charcoal: #363636;
+  --color-orange: #fe9200;
+  --color-teal: #63aabc;
+  --color-gray: #c4c7c4;
+  --color-peach: #ff9460;
+  --color-light-gray: #e2e2e2;
+  --color-lime: #a4d071;
+  --color-very-light-gray: #ededed;
+  --color-blue-clear: #c0f3ff;
+
+  /* ========================================
+     TIPOGRAFÍA
+     ======================================== */
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Verdana', sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ========================================
+     ESPACIADO
+     ======================================== */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 1rem; /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2rem; /* 32px */
+  --spacing-xl: 3rem; /* 48px */
+  --spacing-xxl: 4rem; /* 64px */
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* ========================================
+     SOMBRAS
+     ======================================== */
+  --shadow-sm: 0 2px 8px var(--color-shadow);
+  --shadow-md: 0 4px 12px var(--color-shadow);
+  --shadow-lg: 0 6px 20px var(--color-shadow);
+
+  /* ========================================
+     TRANSICIONES
+     ======================================== */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* ========================================
+     DIMENSIONES DEL LAYOUT
+     ======================================== */
+  --header-height: 70px;
+  --sidebar-width-collapsed: 60px;
+  --sidebar-width-expanded: 225px;
+}
+
+/* ======================================
+   RESET & ESTILOS BASE
+   ====================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-dark-gray);
+  background-color: var(--color-very-light-gray);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
