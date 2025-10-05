@@ -1,59 +1,256 @@
-# SkandiaApp
+# 🏦 Skandia Financial Planning Platform
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+> **Plataforma digital de planificación financiera desarrollada con Angular 19**
 
-## Development server
+[![Angular](https://img.shields.io/badge/Angular-19.0.0-red?logo=angular)](https://angular.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tests](https://img.shields.io/badge/Tests-30%20passing-success)](https://jasmine.github.io/)
 
-To start a local development server, run:
+---
+
+## 📋 **Tabla de Contenidos**
+
+- [Características](#-características)
+- [Tecnologías](#️-tecnologías)
+- [Requisitos Previos](#-requisitos-previos)
+- [Estructura del Proyecto](#-estructura-del-proyecto)
+- [Instalación](#-instalación)
+- [Ejecución](#-ejecución)
+- [Testing](#-testing)
+- [Arquitectura](#-arquitectura)
+- [Componentes Principales](#-componentes-principales)
+- [API](#-api)
+- [Scripts Disponibles](#-scripts-disponibles)
+- [Autor](#-autor)
+
+---
+
+## ✨ **Características**
+
+- ✅ **Diseño Responsive**: Optimizado para desktop, tablet y móvil
+- ✅ **Integración con API**: Consumo de datos en tiempo real desde una API REST
+- ✅ **Testing Completo**: 30 tests unitarios con cobertura crítica
+- ✅ **Arquitectura Modular**: Componentes standalone reutilizables
+
+---
+
+## 🛠️ **Tecnologías**
+
+### **Core**
+
+- **Angular** `20.3.4` - Framework principal
+- **TypeScript** `5.9.2` - Lenguaje de programación
+- **RxJS** `7.8.0` - Programación reactiva
+- **Zone.js** `0.15.0` - Detección de cambios
+
+### **Desarrollo**
+
+- **Angular CLI** `20.3.4` - Herramienta de línea de comandos
+- **Karma** `6.4.0` - Test runner
+- **Jasmine** `5.4.0` - Framework de testing
+- **TypeScript ESLint** `8.18.0` - Linting
+
+### **Diseño**
+
+- **CSS3** con metodología BEM
+- **Responsive Design** con Media Queries
+- **Custom Properties** (Variables CSS)
+
+---
+
+## 📦 **Requisitos Previos**
+
+Antes de comenzar, asegúrate de tener instalado:
+
+| Herramienta     | Versión Mínima |
+| --------------- | ---------------|
+| **Node.js**     | `22.16.0`      |
+| **npm**         | `11.4.2`       |
+| **Angular CLI** | `20.3.4`       |
+
+### **Instalación de Angular CLI (si no lo tienes):**
 
 ```bash
-ng serve
+npm install -g @angular/cli
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📁 **Estructura del Proyecto**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+```
+skandia-app/
+│
+├── src/
+│   ├── app/
+│   │   ├── core/                               # Servicios y modelos core
+│   │   │   ├── models/
+│   │   │   │   └── card.interface.ts           # Interfaces de datos
+│   │   │   └── services/
+│   │   │       └── products-api.service.ts     # Servicio HTTP
+│   │   │
+│   │   ├── features/                           # Módulos de funcionalidades
+│   │   │   │
+│   │   │   │___├── components/
+│   │   │       │   ├── goal-card/              # Banner principal
+│   │   │       │   ├── hero-banner/            # Tarjeta de objetivo
+│   │   │       │   ├── products-slider/        # Slider de productos
+│   │   │       │   └── recommended-products/   # Recomendaciones
+│   │   │       │
+│   │   │       └── home/                       # Módulo Home
+│   │   │           ├── home.component.ts       # Componente principal
+│   │   │           ├── home.component.html
+│   │   │           └── home.component.css
+│   │   │
+│   │   ├── shared/                             # Componentes compartidos
+│   │   │   └── components/
+│   │   │       ├── footer/                     # Footer institucional
+│   │   │       ├── header/                     # Header con navegación
+│   │   │       └── sidebar/                    # Sidebar colapsable
+│   │   │
+│   │   ├── app.component.ts                    # Componente raíz
+│   │   ├── app.config.ts                       # Configuración de la app
+│   │   └── app.routes.ts                       # Rutas de la aplicación
+│   │
+│   ├── assets/                                 # Recursos estáticos
+│   │   ├── aside/                              # Iconos del sidebar
+│   │   ├── footer/                             # Logos y redes sociales
+│   │   ├── main/                               # Iconos principales
+│   │   └── nav/                                # Iconos de navegación
+│   │
+│   ├── styles.css                              # Estilos globales
+│   ├── index.html                              # HTML principal
+│   └── main.ts                                 # Bootstrap de la app
+│
+├── .editorconfig                               # Configuración del editor
+├── angular.json                                # Configuración de Angular
+├── karma.conf.js                               # Configuración de Karma
+├── package.json                                # Dependencias del proyecto
+├── tsconfig.json                               # Configuración de TypeScript
+└── README.md                                   # Este archivo
+```
+
+---
+
+## 🚀 **Instalación**
+
+### **1. Clonar el repositorio**
 
 ```bash
-ng generate component component-name
+git clone https://github.com/JuanRinconG21/test-front-end.git
+cd skandia-app
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### **2. Instalar dependencias**
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
+Esto instalará todas las dependencias listadas en `package.json`.
 
-To build the project run:
+---
+
+## **Ejecución**
+
+### **Desarrollo**
 
 ```bash
-ng build
+ng serve --open
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+La aplicación estará disponible en: **http://localhost:4200**
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### **Build de producción**
 
 ```bash
-ng test
+ng build --configuration production
 ```
 
-## Running end-to-end tests
+Los archivos compilados estarán en: `dist/skandia-app/browser/`
 
-For end-to-end (e2e) testing, run:
+---
+
+## **Testing**
+
+El proyecto incluye **30 tests unitarios** con cobertura completa de componentes y servicios.
+
+### **Distribución de tests:**
+
+| Componente/Servicio  | Tests  |
+| -------------------- | ------ |
+| App Component        | 2      |
+| Header               | 3      |
+| Sidebar              | 3      |
+| Footer               | 3      |
+| Hero Banner          | 3      |
+| Goal Card            | 3      |
+| Products Slider      | 3      |
+| Recommended Products | 3      |
+| Home Component       | 3      |
+| Products API Service | 4      |
+| **TOTAL**            | **30** |
+
+### **Ejecutar tests**
 
 ```bash
-ng e2e
+ng test --watch=false
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## **API**
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### **Endpoint Principal**
+
+```
+https://62e152f8fa99731d75d44571.mockapi.io/api/v1/test-front-end-skandia/cards
+```
+
+### **Método:** `GET`
+
+### **Respuesta:**
+
+```json
+{
+  "listCard": [
+    {
+      "nameProduct": "MFUND",
+      "numberProduct": "789654123",
+      "balanceProduct": "4000000",
+      "detaildProduct": "Ya tienes un 15% de tu objetivo"
+    },
+  ]
+}
+```
+
+### **Modelo de datos:**
+
+```typescript
+export interface Product {
+  nameProduct: string;
+  numberProduct: string;
+  balanceProduct: string;
+  detaildProduct: string;
+}
+
+export interface ProductsResponse {
+  listCard: Product[];
+}
+```
+
+
+---
+
+## 👨‍💻 **Autor**
+
+**Juan Jose Rincón Gomez**
+
+- **GitHub**: [@JuanRinconG21](https://github.com/JuanRinconG21)
+- **Proyecto**: Prueba Frontend - Skandia
+
+<div align="center">
+
+**Desarrollado por Juan Jose Rincón Gomez**
+
+</div>
