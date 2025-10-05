@@ -1,27 +1,10 @@
 # 🏦 Skandia Financial Planning Platform
 
-> **Plataforma digital de planificación financiera desarrollada con Angular 19**
+> **Plataforma digital de planificación financiera desarrollada con Angular 20.3.4**
 
-[![Angular](https://img.shields.io/badge/Angular-19.0.0-red?logo=angular)](https://angular.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Angular](https://img.shields.io/badge/Angular-20.3.4-red?logo=angular)](https://angular.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tests](https://img.shields.io/badge/Tests-30%20passing-success)](https://jasmine.github.io/)
-
----
-
-## 📋 **Tabla de Contenidos**
-
-- [Características](#-características)
-- [Tecnologías](#️-tecnologías)
-- [Requisitos Previos](#-requisitos-previos)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Instalación](#-instalación)
-- [Ejecución](#-ejecución)
-- [Testing](#-testing)
-- [Arquitectura](#-arquitectura)
-- [Componentes Principales](#-componentes-principales)
-- [API](#-api)
-- [Scripts Disponibles](#-scripts-disponibles)
-- [Autor](#-autor)
 
 ---
 
@@ -63,7 +46,7 @@
 Antes de comenzar, asegúrate de tener instalado:
 
 | Herramienta     | Versión Mínima |
-| --------------- | ---------------|
+| --------------- | -------------- |
 | **Node.js**     | `22.16.0`      |
 | **npm**         | `11.4.2`       |
 | **Angular CLI** | `20.3.4`       |
@@ -219,7 +202,7 @@ https://62e152f8fa99731d75d44571.mockapi.io/api/v1/test-front-end-skandia/cards
       "numberProduct": "789654123",
       "balanceProduct": "4000000",
       "detaildProduct": "Ya tienes un 15% de tu objetivo"
-    },
+    }
   ]
 }
 ```
@@ -238,7 +221,6 @@ export interface ProductsResponse {
   listCard: Product[];
 }
 ```
-
 
 ---
 
